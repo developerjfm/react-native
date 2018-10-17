@@ -1,7 +1,19 @@
-/** @format */
+import React from 'react';
+import { AppRegistry, SafeAreaView } from 'react-native';
+import Routes from './src/routes/Routes';
+import { name as appName } from './app.json';
+import { initializeFirebaseApi } from './src/services/FirebaseApi';
 
-import {AppRegistry} from 'react-native';
-import App from './App';
-import {name as appName} from './app.json';
+const wrappedRoutes = () => {
+    return (
+        <SafeAreaView style={{ flex: 1 }}> 
+            <Routes />
+        </SafeAreaView>);
+};
+// if(!__DEV__){
+    console.disableYellowBox = true;
+// }
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => { 
+    initializeFirebaseApi();
+    return wrappedRoutes; });
