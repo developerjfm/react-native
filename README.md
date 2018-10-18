@@ -1,3 +1,8 @@
 # reactive-native
 
-Primeiro contato com reactive
+Disciplina - Ferramenta Multiplataforma 
+Framework - React-Native
+
+Projeto Final
+
+=> react-native run-ios
